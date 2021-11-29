@@ -42,7 +42,7 @@ class TourController extends AppBaseController
      */
     public function create()
     {
-        return view('tours.create');
+        return view('plans.index');
     }
 
     /**

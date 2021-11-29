@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $name
  * @property string $address
  * @property string $tel
+ * @property string $spot_location
+ * @property string $standard_term
  */
 class Spot extends Model
 {
@@ -26,12 +28,12 @@ class Spot extends Model
 
     protected $dates = ['deleted_at'];
 
-
-
     public $fillable = [
         'name',
         'address',
-        'tel'
+        'tel',
+        'spot_location',
+        'standard_term',
     ];
 
     /**

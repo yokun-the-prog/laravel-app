@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateSpotRequest;
 use App\Repositories\SpotRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class SpotController extends AppBaseController
@@ -31,7 +31,7 @@ class SpotController extends AppBaseController
     {
         $spots = $this->spotRepository->all();
 
-        return view('spots.index')
+        return view('admin/spots.index')
             ->with('spots', $spots);
     }
 
@@ -42,7 +42,7 @@ class SpotController extends AppBaseController
      */
     public function create()
     {
-        return view('spots.create');
+        return view('admin/spots.create');
     }
 
     /**
@@ -80,7 +80,7 @@ class SpotController extends AppBaseController
             return redirect(route('spots.index'));
         }
 
-        return view('spots.show')->with('spot', $spot);
+        return view('admin/spots.show')->with('spot', $spot);
     }
 
     /**
@@ -100,7 +100,7 @@ class SpotController extends AppBaseController
             return redirect(route('spots.index'));
         }
 
-        return view('spots.edit')->with('spot', $spot);
+        return view('admin/spots.edit')->with('spot', $spot);
     }
 
     /**

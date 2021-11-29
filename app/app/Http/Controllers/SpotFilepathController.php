@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateSpotFilepathRequest;
 use App\Repositories\SpotFilepathRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class SpotFilepathController extends AppBaseController

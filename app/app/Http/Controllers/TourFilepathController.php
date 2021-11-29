@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTourFilepathRequest;
 use App\Repositories\TourFilepathRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class TourFilepathController extends AppBaseController

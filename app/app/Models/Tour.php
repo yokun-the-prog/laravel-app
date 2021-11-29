@@ -27,11 +27,8 @@ class Tour extends Model
     use HasFactory;
 
     public $table = 'tours';
-    
 
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'user_id',
@@ -70,5 +67,4 @@ class Tour extends Model
         'return_at' => 'required'
     ];
 
-    
 }
