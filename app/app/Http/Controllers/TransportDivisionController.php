@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTransportDivisionRequest;
 use App\Repositories\TransportDivisionRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class TransportDivisionController extends AppBaseController

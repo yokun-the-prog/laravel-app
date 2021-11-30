@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateSpotTagRequest;
 use App\Repositories\SpotTagRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class SpotTagController extends AppBaseController

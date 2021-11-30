@@ -22,33 +22,43 @@ Auth::routes();
 // 管理者用
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'],function(){
     // 管理画面表示
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'admin_index'])->name('admin.home');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'admin_index'])->name('admin.index');
     // 管理項目表示
+    Route::resource('/users', App\Http\Controllers\UserController::class);
+    Route::resource('/spots', App\Http\Controllers\SpotController::class);
+    Route::resource('/tours', App\Http\Controllers\TourController::class);
+    Route::resource('/destinations', App\Http\Controllers\DestinationController::class);
     Route::resource('/photorallyDivisions', App\Http\Controllers\PhotorallyDivisionController::class);
     Route::resource('/transportDivisions', App\Http\Controllers\TransportDivisionController::class);
-    Route::resource('/tours', App\Http\Controllers\TourController::class);
-    Route::resource('/users', App\Http\Controllers\UserController::class);
-    Route::resource('/tourFilepaths', App\Http\Controllers\TourFilepathController::class);
     Route::resource('/erratumDivisions', App\Http\Controllers\ErratumDivisionController::class);
     Route::resource('/tags', App\Http\Controllers\TagController::class);
+    Route::resource('/spotTags', App\Http\Controllers\SpotTagController::class);
+    Route::resource('/spotFilepaths', App\Http\Controllers\SpotFilepathController::class);
     Route::resource('/tourFilepaths', App\Http\Controllers\TourFilepathController::class);
-    Route::resource('/erratumDivisions', App\Http\Controllers\ErratumDivisionController::class);
-    Route::resource('/spots', App\Http\Controllers\SpotController::class);
-    Route::resource('/spotFilepaths', App\Http\Controllers\SpotFilepathController::class);
-    Route::resource('/spotTags', App\Http\Controllers\SpotTagController::class);
-    Route::resource('/destinations', App\Http\Controllers\DestinationController::class);
-    Route::resource('/spotFilepaths', App\Http\Controllers\SpotFilepathController::class);
-    Route::resource('/spotTags', App\Http\Controllers\SpotTagController::class);
 });
 
 
 // 利用画面
-Route::group(['prefix' => 'guest'],function(){
+Route::group(['prefix' => 'guest', 'middleware' => 'auth'],function(){
     // メニュー画面表示
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'guest_index'])->name('guest.home');
-    
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'guest_index'])->name('guest.index');
+    Route::get('/spots', [App\Http\Controllers\SpotController::class, 'guest_index'])->name('guest/spots.index');
+
+    Route::get('/tours', [App\Http\Controllers\TourController::class, 'guest_index'])->name('guest/tours.index');
+
+
+
+
     // 見どころ紹介用
-    //Route::get();
+    // Route::group(['prefix' => 'spots'],function(){
+    //     Route::get('/', [App\Http\Controllers\SpotController::class, 'guest_index'])->name('guest/spots.index');
+        // Route::get('/show/{spot_id}', [App\Http\Controllers\SpotController::class, 'show'])->name('guest/spots.show');
+        // Route::get('/edit/{spot_id}', [App\Http\Controllers\SpotController::class, 'show'])->name('guest/spots.show');
+        // Route::get('post/edit/{post_id}', 'PostController@edit')->name('post.edit');
+
+    // });
+
+
 
     // 旅の計画用
     //Route::get();

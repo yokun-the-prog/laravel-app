@@ -21,7 +21,7 @@
 
             <div class="card-body">
                 <div class="row">
-                    @include('spots.fields')
+                    @include('guest/spots.fields')
                 </div>
             </div>
 

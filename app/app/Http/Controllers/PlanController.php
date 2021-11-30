@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTourRequest;
 use App\Repositories\TourRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class PlanController extends AppBaseController

@@ -30,6 +30,8 @@ class Tour extends Model
 
     protected $dates = ['deleted_at'];
 
+
+
     public $fillable = [
         'user_id',
         'photorally_division_id',
@@ -66,5 +68,6 @@ class Tour extends Model
         'return_spot' => 'required',
         'return_at' => 'required'
     ];
+
 
 }

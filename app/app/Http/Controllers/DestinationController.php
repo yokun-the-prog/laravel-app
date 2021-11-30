@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateDestinationRequest;
 use App\Repositories\DestinationRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class DestinationController extends AppBaseController

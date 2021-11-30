@@ -2,9 +2,6 @@
     <table class="table" id="tours-table">
         <thead>
         <tr>
-            <th>User Id</th>
-            <th>Photorally Division Id</th>
-            <th>Transport Division Id</th>
             <th>Schedule</th>
             <th>Departure Spot</th>
             <th>Departure At</th>
@@ -16,9 +13,6 @@
         <tbody>
         @foreach($plans ?? '' as $plan)
             <tr>
-                <td>{{ $tour->user_id }}</td>
-                <td>{{ $tour->photorally_division_id }}</td>
-                <td>{{ $tour->transport_division_id }}</td>
                 <td>{{ $tour->schedule }}</td>
                 <td>{{ $tour->departure_spot }}</td>
                 <td>{{ $tour->departure_at }}</td>

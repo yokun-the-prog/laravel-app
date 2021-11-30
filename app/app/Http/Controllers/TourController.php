@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTourRequest;
 use App\Repositories\TourRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class TourController extends AppBaseController
@@ -153,4 +153,28 @@ class TourController extends AppBaseController
 
         return redirect(route('tours.index'));
     }
+
+
+
+
+    // ゲストユーザー用
+    public function guest_index(Request $request)
+    {
+        $spots = $this->tourRepository-->user()->all();
+        return view('guest/tours.index')->with('tours', $spots);
+    }
+
+    public function guest_show($id)
+    {
+        $tour = $this->tourRepository->find($id);
+
+        if (empty($tour)) {
+            Flash::error('Spot not found');
+
+            return redirect(route('guest/spots.show'));
+        }
+
+        return view('guest/tours.show')->with('tour', $spot);
+    }
+
 }

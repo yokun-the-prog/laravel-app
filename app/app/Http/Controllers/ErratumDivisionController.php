@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateErratumDivisionRequest;
 use App\Repositories\ErratumDivisionRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class ErratumDivisionController extends AppBaseController

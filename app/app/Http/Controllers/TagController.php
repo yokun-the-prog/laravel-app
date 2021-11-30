@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTagRequest;
 use App\Repositories\TagRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Laracasts\Flash\Flash;
 use Response;
 
 class TagController extends AppBaseController

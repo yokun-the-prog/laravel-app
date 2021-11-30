@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-aaa
+        左のメニューから選択してください。
     </div>
 </div>
 @endsection

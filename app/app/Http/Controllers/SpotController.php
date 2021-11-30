@@ -31,8 +31,7 @@ class SpotController extends AppBaseController
     {
         $spots = $this->spotRepository->all();
 
-        return view('admin/spots.index')
-            ->with('spots', $spots);
+        return view('admin/spots.index')->with('spots', $spots);
     }
 
     /**
@@ -153,4 +152,30 @@ class SpotController extends AppBaseController
 
         return redirect(route('spots.index'));
     }
+
+
+    // ゲストユーザー用
+    public function guest_index(Request $request)
+    {
+        $spots = $this->spotRepository->all();
+        return view('guest/spots.index')->with('spots', $spots);
+    }
+
+    public function guest_show($id)
+    {
+        $spot = $this->spotRepository->find($id);
+
+        if (empty($spot)) {
+            Flash::error('Spot not found');
+
+            return redirect(route('guest/spots.show'));
+        }
+
+        return view('guest/spots.show')->with('spot', $spot);
+    }
+
+
+
+
+    
 }

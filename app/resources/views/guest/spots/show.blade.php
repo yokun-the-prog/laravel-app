@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('spots.index') }}">
+                       href="{{ route('guest/spots.index') }}">
                         Back
                     </a>
                 </div>
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @include('spots.show_fields')
+                    @include('guest/spots.show_fields')
                 </div>
             </div>
         </div>
